@@ -36,7 +36,7 @@ exports.setupLanguage = function(){
     // Load Language Files
     exports.loadLanguage('en_US')
     // Uncomment this when translations are ready
-    //exports.loadLanguage('xx_XX')
+    exports.loadLanguage('zh_TW')
 
     // Load Custom Language File for Launcher Customizer
     exports.loadLanguage('_custom')
