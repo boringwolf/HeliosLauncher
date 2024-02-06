@@ -17,6 +17,7 @@
     "dist:win": "npm run dist -- -w",
     "dist:mac": "npm run dist -- -m",
     "dist:linux": "npm run dist -- -l",
+    "publish": "electron-builder build --mac --win --publish always",
     "lint": "eslint --config .eslintrc.json ."
   },
   "engines": {
