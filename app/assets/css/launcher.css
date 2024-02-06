@@ -9,17 +9,26 @@
 
 @font-face {
     font-family: 'Avenir Book';
-    src: url('../fonts/Avenir-Book.ttf');
+    src: url('../fonts/Cubic_11_1.100_R.ttf');
 }
 
 @font-face {
     font-family: 'Avenir Medium';
-    src: url('../fonts/Avenir-Medium.ttf');
+    src: url('../fonts/Cubic_11_1.100_R.ttf');
+}
+
+@font-face {
+    font-family: 'Cubic';
+    src: url('../fonts/Cubic_11_1.100_R.ttf');
 }
 
 @font-face {
     font-family: 'Ringbearer';
     src: url('../fonts/Ringbearer.ttf');
+}
+
+:root {
+    --main-font-size: 20px;
 }
 
 /*******************************************************************************
