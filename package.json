@@ -1,13 +1,13 @@
 {
-  "name": "helioslauncher",
-  "version": "2.1.2",
-  "productName": "Helios Launcher",
+  "name": "wolflauncher",
+  "version": "2.1.3",
+  "productName": "Wolf Launcher",
   "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/)",
+  "author": "boringwolf (https://github.com/boringwolf/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/dscalzi/HeliosLauncher",
+  "homepage": "https://github.com/boringwolf/WolfLauncher",
   "bugs": {
-    "url": "https://github.com/dscalzi/HeliosLauncher/issues"
+    "url": "https://github.com/boringwolf/WolfLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -46,6 +46,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dscalzi/HeliosLauncher.git"
+    "url": "git+https://github.com/boringwolf/WolfLauncher.git"
   }
 }
