@@ -211,7 +211,7 @@ checking = "檢查新聞中"
 
 [js.landing.discord]
 loading = "遊戲加載中.."
-joining = "前往 Westeros！"
+joining = "正在加入 Wolf SMP！"
 joined = "探索領域！"
 
 [js.overlay]
