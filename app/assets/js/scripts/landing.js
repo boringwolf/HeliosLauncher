@@ -30,7 +30,6 @@ const {
 // Internal Requirements
 const DiscordWrapper          = require('./assets/js/discordwrapper')
 const ProcessBuilder          = require('./assets/js/processbuilder')
-
 // Launch Elements
 const launch_content          = document.getElementById('launch_content')
 const launch_details          = document.getElementById('launch_details')
@@ -104,6 +103,7 @@ document.getElementById('launch_button').addEventListener('click', async e => {
     try {
         const server = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
         const jExe = ConfigManager.getJavaExecutable(ConfigManager.getSelectedServer())
+        const token = ConfigManager.getSelectedAccount().accessToken
         if(jExe == null){
             await asyncSystemScan(server.effectiveJavaOptions)
         } else {
@@ -112,11 +112,11 @@ document.getElementById('launch_button').addEventListener('click', async e => {
             toggleLaunchArea(true)
             setLaunchPercentage(0, 100)
 
+            await verifySMPServer(token)
             const details = await validateSelectedJvm(ensureJavaDirIsRoot(jExe), server.effectiveJavaOptions.supported)
             if(details != null){
                 loggerLanding.info('Jvm Details', details)
                 await dlAsync()
-
             } else {
                 await asyncSystemScan(server.effectiveJavaOptions)
             }
@@ -139,6 +139,15 @@ document.getElementById('avatarOverlay').onclick = async e => {
     switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
         settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
     })
+}
+
+async function verifySMPServer(token){
+    await fetch('https://verify.bnsw.tech/', {
+        method: 'PATCH',
+        headers: {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/json',
+        }})
 }
 
 // Bind selected account

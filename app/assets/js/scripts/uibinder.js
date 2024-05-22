@@ -464,3 +464,8 @@ async function devModeToggle() {
     updateSelectedServer(data.servers[0])
     syncModConfigurations(data)
 }
+
+async function getAuthDetails(){
+    const authAcc = ConfigManager.getSelectedAccount()
+    console.log(authAcc)
+}
