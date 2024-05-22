@@ -251,9 +251,15 @@ const refreshServerStatus = async (fade = false) => {
     let pLabel = Lang.queryJS('landing.serverStatus.server')
     let pVal = Lang.queryJS('landing.serverStatus.offline')
 
+    let hostname = serv.hostname
+
+    if (hostname === 'mc-proxy.bnsw.tech') {
+        hostname = 'mc.bnsw.tech'
+    }
+
     try {
 
-        const servStat = await getServerStatus(47, serv.hostname, serv.port)
+        const servStat = await getServerStatus(47, hostname, serv.port)
         console.log(servStat)
         pLabel = Lang.queryJS('landing.serverStatus.players')
         pVal = servStat.players.online + '/' + servStat.players.max
