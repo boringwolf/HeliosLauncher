@@ -9,9 +9,7 @@ const os                    = require('os')
 const path                  = require('path')
 
 const ConfigManager            = require('./configmanager')
-
 const logger = LoggerUtil.getLogger('ProcessBuilder')
-
 
 /**
  * Only forge and fabric are top level mod loaders.
@@ -53,7 +51,7 @@ class ProcessBuilder {
         this.usingFabricLoader = this.server.modules.some(mdl => mdl.rawModule.type === Type.Fabric)
         logger.info('Using fabric loader:', this.usingFabricLoader)
         const modObj = this.resolveModConfiguration(ConfigManager.getModConfiguration(this.server.rawServer.id).mods, this.server.modules)
-        
+
         // Mod list below 1.13
         // Fabric only supports 1.14+
         if(!mcVersionAtLeast('1.13', this.server.rawServer.minecraftVersion)){
